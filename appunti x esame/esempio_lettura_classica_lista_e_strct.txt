@@ -1,0 +1,79 @@
+ESAME 15/06/2023 (CLASSICA LETTURA STRUTTURA E LISTA CON CONTROLLO ERRORE)
+------------------------------------------------------------------------------
+Consumo* leggiConsumi(char* fileName, int* dim)
+{
+	Consumo* risultato;
+	FILE* f;
+	(*dim) = 0;
+	int giornoM;
+	char giornoS[11];
+	float F1;
+	float F2;
+	float F3;
+	int conta = 0;
+	boolean errore = true; //controllo venga eseguito almeno una lettura
+	f = fopen(fileName, "r");
+	if (f == NULL)
+	{
+		printf("Errore nell'apertura del file!");
+		return NULL;
+	}
+	while (fscanf(f, "%d %s %f %f %f", &giornoM, giornoS, &F1, &F2, &F3) == 5)
+	{
+		errore = false;
+		(*dim)++;
+	}
+	if (errore)
+	{
+		printf("Errore nella lettura del file!");
+		return NULL;
+	}
+	rewind(f);
+	risultato = (Consumo*)malloc(sizeof(Consumo) * (*dim));
+	while (fscanf(f, "%d %s %f %f %f", &giornoM, giornoS, &F1, &F2, &F3) == 5)
+	{
+		risultato[conta].giornoM = giornoM;
+		risultato[conta].F1 = F1;
+		risultato[conta].F2 = F2;
+		risultato[conta].F3 = F3;
+		strcpy(risultato[conta].giornoS, giornoS);
+		conta = conta + 1;
+	}
+	fclose(f);
+	return risultato;
+}
+
+void stampaConsumiETotali(Consumo* elencoConsumi, int dim)
+{
+	if (dim == 0)
+	{
+		return;
+	}
+	float totale;
+	totale = elencoConsumi[0].F1 + elencoConsumi[0].F2 + elencoConsumi[0].F3;
+	printf("%d %s --> F1: %.2f F2: %.2f F3: %.2f TOT: %.2f \n", elencoConsumi[0].giornoM, elencoConsumi[0].giornoS, elencoConsumi[0].F1, elencoConsumi[0].F2, elencoConsumi[0].F3, totale);
+	stampaConsumiETotali(elencoConsumi + 1, dim - 1);
+}
+
+list leggiAttivita(char* fileName)
+{
+	list risultato = emptylist();
+	Attivita temp;
+	FILE* f;
+	int giornoM;
+	char descrizione[24];
+	f = fopen(fileName, "r");
+	if (f == NULL)
+	{
+		printf("Errore nell'apertura del file!");
+		return emptylist();
+	}
+	while (fscanf(f, "%d %s", &giornoM, descrizione) == 2)
+	{
+		temp.giornoM = giornoM;
+		strcpy(temp.descrizione, descrizione);
+		risultato = cons(temp, risultato);
+	}
+	fclose(f);
+	return risultato;
+}

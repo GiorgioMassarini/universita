@@ -1,0 +1,74 @@
+ESAME 24/01/2024 (LETTURA CON SPAZI (READFIELD))
+---------------------------------------------------------------------------------------
+int readField(char buffer[], char sep, FILE* f) //LEGGE UN CAMPO DI UNA RIGA
+{
+	int i = 0;
+	char ch = fgetc(f);
+	while (ch != sep && ch != '\0' && ch != EOF) {
+		buffer[i] = ch;
+		i++;
+		ch = fgetc(f);
+	}
+	buffer[i] = '\0';
+	return buffer;
+}
+
+Foto leggi_una_foto(FILE* fp) //LEGGE UNA RIGA
+{
+	Foto risultato;
+	if (fscanf(fp, "%d", &(risultato.id)) == 1)
+	{
+		fgetc(fp);
+		readField(risultato.autore, '@', fp);
+		readField(risultato.descrizione, '@', fp); // I SEPARATORI POSSONO CAMBIARE AD OGNI ESERCIZIO
+		return risultato;
+	}
+	risultato.id = -1;
+	return risultato;
+}
+
+list leggi_tutte_foto(char* fileName) //LEGGE TUTTO IL FILE
+{
+	FILE* f;
+	list risultato;
+	Foto temp;
+	risultato = emptylist();
+	f = fopen(fileName, "r");
+	if (f == NULL)
+	{
+		printf("Errore nell'apertura del file!");
+		return NULL;
+	}
+	temp = leggi_una_foto(f);
+	while (temp.id != -1)
+	{
+		if (temp.id != -1)
+		{
+			risultato = cons(temp, risultato);
+		}
+		temp = leggi_una_foto(f);
+	}
+	fclose(f);
+	return risultato;
+}
+
+void stampa_foto(list leFoto, char* autore) //STAMPA LA LISTA (POTREBBE NON SERVIRE)
+{
+	if (strcmp(autore, "") == 0)
+	{
+		showlist(leFoto);
+		return 0;
+	}
+	list temp;
+	Foto current;
+	temp = leFoto;
+	while (!empty(temp))
+	{
+		current = head(temp);
+		if (strcmp(current.autore, autore) == 0)
+		{
+			printf("%d %s %s \n", current.id, current.autore, current.descrizione);
+		}
+		temp = tail(temp);
+	}
+}

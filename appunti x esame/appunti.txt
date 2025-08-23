@@ -1,0 +1,56 @@
+RICORDA:
+Dealloca memoria di TUTTE le liste usate --> freelist(lista);
+Dealloca memoria dei vettori allocati dinamicamente --> free(vettore);
+chiudi TUTTI i file aperti --> fclose(file);
+
+
+main.c --#include--> funzioni.h --#include--> list.h --#include--> element.h
+
+
+funzioni.c  --#include-->   funzioni.h
+list.c      --#include-->   list.h
+element.c   --#include-->   element.h
+
+ch=getchar();     (legge un carattere da input e restituisce un intero)
+ch=fgetc(file);   (legge un carattere da un file aperto e restituisce un intero)
+
+!= diverso
+
+------TABELLA ASCI-------
+0 --> 48
+...
+9 --> 57
+
+@ --> 64
+
+A --> 65
+...
+Z --> 90
+
+a --> 97
+...
+z --> 122
+
+NUMERI BINARI:
+fwrite(dati da scrivere, dimensione di ogni elemento (in byte), numero di elementi, file)
+fread(buffer dove verranno salvati i dati letti, Dimensione di ogni elemento da leggere (in byte), Numero di elementi da leggere, file)
+
+TIPI DI APERTURA FILE
+f=fopen("nomefine.txt", "r") testo lettura
+f=fopen("nomefine.txt", "w") testo scrittura
+f=fopen("nomefine.txt", "a") testo aggiunta
+f=fopen("nomefine.dat", "rb") binario lettura
+f=fopen("nomefine.dat", "wb") binario scrittura
+f=fopen("nomefine.dat", "ab") binario aggiunta
+
+FUNZIONI UTILI DI STRING.H
+strlen --> Calcola la lunghezza di una stringa (escluso il carattere null \0) --> size_t strlen(const char *str);
+strcpy --> Copia una stringa in un'altra (incluso il carattere null \0) --> char *strcpy(char *dest, const char *src);
+strncpy --> Copia al massimo n caratteri di una stringa in un'altra --> char *strncpy(char *dest, const char *src, size_t n);
+strcat --> Concatena due stringhe. Aggiunge src alla fine di dest --> char *strcat(char *dest, const char *src);
+strncat --> Concatena al massimo n caratteri di una stringa alla fine di un'altra --> char *strncat(char *dest, const char *src, size_t n);
+strcmp --> Confronta due stringhe. Restituisce un valore negativo, zero o positivo --> int strcmp(const char *str1, const char *str2);
+strchr --> Cerca la prima occorrenza di un carattere in una stringa --> char *strchr(const char *str, int c);
+strrchr --> Cerca l'ultima occorrenza di un carattere in una stringa --> char *strrchr(const char *str, int c);
+strstr --> Cerca la prima occorrenza di una sottostringa all'interno di una stringa --> char *strstr(const char *haystack, const char *needle);
+strtok --> Divide una stringa in sottostringhe (token) utilizzando delimitatori --> char *strtok(char *str, const char *delim);
