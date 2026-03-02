@@ -1,0 +1,19 @@
+import java.text.NumberFormat;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Locale;
+
+public class Formatters {
+	public static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofLocalizedTime(FormatStyle.SHORT).withLocale(Locale.ITALY);
+	public static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT,FormatStyle.SHORT).withLocale(Locale.ITALY);
+	public static final NumberFormat euroFormatter = NumberFormat.getCurrencyInstance(Locale.ITALY); //PER IMPORTI CON EURO A DESTRA
+	public static final DateTimeFormatter itDateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); //ESEMPIO DATA: 08/10/2005
+	public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy").withLocale(Locale.ITALY); /ESEMPIO DATA: 08/10/2005
+	public static final NumberFormat itPriceFormatter = new DecimalFormat("¤ #,##0.00"); //PER IMPORTI CON EURO A SINISTRA
+	public static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy").withLocale(Locale.ITALY); //PER DATE CON GIORNI O MESI CON UNA OPPURE DUE CIFRE
+	public static final NumberFormat formattatoreCfu = NumberFormat.getInstance(Locale.ITALY); //PER NUMERI DECIMALI "ITALIANI" (CON VIRGOLA INVECE CHE PUNTO ES: 6,0)
+
+}
+
+
+(se serve il singolo formattere copiare solo da "final" in poi)

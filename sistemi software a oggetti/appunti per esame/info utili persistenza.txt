@@ -1,0 +1,27 @@
+CICLO CLASSICO PER LETTURA FILE UNA RIGA ALLA VOLTA
+
+BufferedReader br = new BufferedReader(reader);
+String line;
+while ((linea = reader.readLine()) != null) {
+      String[] tokens = line.split(" ");
+      // Elabora la riga
+}
+
+-----------------------------------------------------------------------------
+POSSIBILI ARGOMENTI DA PASSARE ALLA SPLIT PER TOKENIZZARE
+
+\\.     separa nei punti
+\\t     separa nelle tabulazioni
+\\s     separa in un qualsiasi carattere di spazio
+\\d     separa in qualsiasi cifra numerica
+
+CARATTERI SPECIALI SEPARATORI IN CUI VA USATO \\ DAVANTI
+. | * + ? ( )
+
++   --> una o più
+*   --> zero o più
+
+di solito si usa: 
+line.split("\\s+");
+line.split("\\t+");
+-------------------------------------------------------------------------------

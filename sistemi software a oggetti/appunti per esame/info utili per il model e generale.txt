@@ -1,0 +1,18 @@
+COME ITERARE OGNI COPPIA CHIAVE-VALORE DI UNA MAPPA
+
+var valoriMappa = nomeMappa.entrySet();
+for(var e : valoriMappa) {
+    //fai quello che devi fare
+    //e è la coppia chiave-valore
+    //....
+}
+-----------------------------------------------------------------------------------
+
+¤ €
+
+------------------------------------------------------------------------------
+https://docs.oracle.com/javase/8/docs/api/java/lang/Throwable.html
+--------------------------------------------------------------------------
+Math.round(x) --> arrotonda al più vicino (sopra o sotto)
+Math.floor(x) --> arrotonda sempre per difetto (verso il basso)
+------------------------------------------------------------------------------

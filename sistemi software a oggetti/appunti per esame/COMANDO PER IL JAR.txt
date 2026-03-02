@@ -1,0 +1,6 @@
+
+COMANDO PER RUNNARE IL JAR ED ESEGUIRLO
+
+METTERSI PRIMA NELLA CARTELLA (DI SOLITO DESKTOP) CON COMAND cd ....
+
+"C:\Users\Megaport\Desktop\jdk-23.0.2\bin\java.exe" --module-path C:\Users\Megaport\Desktop\javafx-sdk-23.0.2\lib --add-modules javafx.controls,javafx.fxml -jar PROVA.jar

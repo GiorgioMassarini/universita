@@ -1,0 +1,10 @@
+private Collection<DayOfWeek>readDayOfWeek(String days){
+		Collection<DayOfWeek> result = new ArrayList<>();
+		for(int i=0;i<7;i++) {
+			char c = days.charAt(i);
+			if(Character.isDigit(c)) {
+				result.add(DayOfWeek.of(Character.getNumericValue(c)));
+			}
+		}
+		return result;
+	}

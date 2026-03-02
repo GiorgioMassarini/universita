@@ -1,0 +1,76 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.Reader;
+import java.util.Map;
+import java.util.SortedMap;
+import java.util.TreeMap;
+import tangenziale.model.Autostrada;
+import tangenziale.model.Tipologia;
+
+
+public class MyAutostradeReader implements AutostradeReader {
+
+	public  Map<String,Autostrada> leggiAutostrade(Reader reader) throws IOException, BadFileFormatException {
+		Map<String,Autostrada> result = new TreeMap<>();
+		BufferedReader br = new BufferedReader(reader);
+		String line;
+		Tipologia tipologia;
+		String id;
+		SortedMap<Integer, String> profilo;
+		int contaTangenziali=0;
+		while((line=br.readLine())!=null) {
+			if(line.equals("")) {
+				continue;
+			}
+			profilo=new TreeMap<>();
+			id=line.trim();
+			int caselloDiPrima=-1;
+			try {
+				while(!(line=br.readLine().trim()).equals(AutostradeReader.END_TAG)) {
+					if(line.equals("")) {
+						continue;
+					}
+					
+					String[] tokens = line.split("\\t+");
+					Integer km;
+					String casello;
+					if(tokens.length!=2) {
+						throw new BadFileFormatException("Numero argomenti per riga non valido");
+					}
+					try {
+						km = Integer.parseInt(tokens[0].trim());
+						casello=tokens[1].trim();
+					}catch(NumberFormatException e) {
+						throw new BadFileFormatException("Errore nel parsing dei km a linea:" + line);
+					}
+					if(km==caselloDiPrima) {
+						throw new BadFileFormatException("Errore, due caselli con stessi km progressivi");
+					}
+					caselloDiPrima=km;
+					profilo.put(km, casello);
+				}
+				}catch(NullPointerException e) {
+					throw new BadFileFormatException("Manca indicatore di fine autostrada");
+				}
+			if(id.equals("Tangenziale")) {
+				tipologia=Tipologia.TANGENZIALE;
+				contaTangenziali++;
+			}
+			else {
+				tipologia=Tipologia.AUTOSTRADA;
+			}
+			try {
+				result.put(id, new Autostrada(tipologia, id, profilo));
+			}catch(IllegalArgumentException e) {
+				throw new BadFileFormatException("Errore, profilo con due caselli omonimi");
+			}
+			if(line.equals("")) {
+				continue;
+			}
+		}
+		if(contaTangenziali!=1) {
+			throw new BadFileFormatException("Ci deve essere una e una sola tangenziale!");
+		}
+		return result;
+	}
+}

@@ -1,0 +1,38 @@
+public class MyTreniReader implements TreniReader {
+	
+	// Frecciazzurra 9805: Torino Porta Nuova (9.10;16), Torino Porta Susa (9.20;2), Milano Porta Garibaldi (10.13;14), Milano Rogoredo (10.45;8), Reggio Emilia AV (11.20;4), Bologna Centrale (11.45;6), Rimini (12.40;3), Riccione (12.47;2), Pesaro (13.02;2), Ancona (13.37;3), Pescara (14.47;2), Termoli (15.36;2), Foggia (16.22;5), Barletta (16.51;1), Bari Centrale (17.31;1), Brindisi (18.26;2), Lecce (18.50;1)
+	// Velocissimo 8907: Udine (7.23;6), Pordenone (8.00;2), Conegliano (8.23;2), Treviso Centrale (8.45;6), Venezia Mestre (9.20;6), Padova (9.35;1), Ferrara (10.11;3), Bologna Centrale (10.42;19), Firenze Santa Maria Novella (11.28;11), Roma Tiburtina (12.57;15), Roma Termini (13.30;11), Napoli Afragola (14.29;4), Napoli Centrale (14.43;15)
+	
+	public List<Treno> leggiTreni(Reader reader) throws IOException, BadFileFormatException {
+		Objects.requireNonNull(reader, "Input reader null in myTreniReader.leggiTreni");
+		var bufferedReader = new BufferedReader(reader);
+		var result = new ArrayList<Treno>(); 
+		String riga;
+		while((riga=bufferedReader.readLine())!=null) {
+			if (riga.isBlank()) continue;
+			//
+			String[] items = riga.split(":");
+			if (items.length!=2) throw new BadFileFormatException("Riga mal formattata, non segue lo schema 'TipoTreno numero : elenco fermate'\t" + riga);
+			//
+			var strHeader = items[0].trim(); 		// tipo e numero treno (separati da spazi)
+			var strElencoFermate = items[1].trim(); // elenco fermate (separate da virgole)
+			//
+			items = strHeader.split("\s+");
+			if(items.length!=2) throw new BadFileFormatException("Riga mal formattata, numero di elementi errato:" + Arrays.toString(items));
+			var categoriaTreno = items[0].trim();
+			var strNumeroTreno = items[1].trim();
+			//
+			try {
+				var listaFermate = Arrays.stream(strElencoFermate.split(",")).map(String::trim).map(this::makeFermata).collect(Collectors.toList());
+				validate(listaFermate);
+				result.add(new Treno(categoriaTreno, strNumeroTreno, listaFermate));
+			}
+			catch(DateTimeParseException e) {
+				throw new BadFileFormatException("Orario errato in una fermata: " + strElencoFermate);
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				throw new BadFileFormatException("Formato errato in una fermata: " + strElencoFermate);
+			}
+		}
+		return result;
+	}

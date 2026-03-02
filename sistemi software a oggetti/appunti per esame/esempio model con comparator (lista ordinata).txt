@@ -1,0 +1,109 @@
+package mediaesami.model;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+public class Carriera {	
+	private List<Esame> listaEsami;
+	private Comparator<Esame> cmp = Comparator.comparing(Esame::getDate) //primo criterio: data (ordine crescente)
+						  .thenComparing(e -> e.getAf().getId()); //secondo criterio: id dell'attivitaFormativa
+	
+	public Carriera() {
+		listaEsami=new ArrayList<>();
+	}
+	
+	public List<Esame> getListaEsami() {
+		return listaEsami;
+	}
+
+	public List<Esame> getTentativiPrecedenti(Esame esame){
+		List<Esame> result = new ArrayList<>();
+		for(Esame e : listaEsami) {
+			if((e.getAf().equals(esame.getAf()))&&(!e.getVoto().superato())){
+				result.add(e);
+			}
+		}
+		return result;
+	}
+		
+	public Optional<Esame> getUltimoTentativo(Esame esame){
+		List<Esame> tentativiPassati = this.getTentativiPrecedenti(esame);
+		Optional<Esame> result = Optional.empty();
+		if(tentativiPassati.size()>=1) {
+			result=Optional.of(tentativiPassati.getLast());
+		}
+		return result;
+	}
+
+	public Optional<Esame> getUltimoEsameDato(){
+		// DA FARE
+		return null; // fake
+	}
+
+	
+	public void inserisci(Esame esame) {
+		if(esame==null) {
+			throw new IllegalArgumentException("esame è null");
+		}
+		for(Esame e : listaEsami) {
+			if((e.getAf().equals(esame.getAf())) && (e.getVoto().superato())) {
+				throw new IllegalArgumentException("esame già superato presente nella carriera!");
+			}
+			if((e.getAf().equals(esame.getAf())) && (e.getDate().equals(esame.getDate()))) {
+				throw new IllegalArgumentException("stesso appello dello stesso esame già presente nella carriera");
+			}
+		}
+		if(esame.getAf().getNome().contains("PROVA FINALE")){
+			for(Esame e : listaEsami) {
+				if(e.getDate().isAfter(esame.getDate())) {
+					throw new IllegalArgumentException("non puoi inserire PROVA FINALE prima di aver dato TUTTI gli altri esami");
+					
+				}
+			}
+			listaEsami.add(esame);
+		}else {
+			listaEsami.add(esame);
+		}
+		listaEsami.sort(cmp);
+	}
+	
+	public double creditiAcquisiti() {
+		double result=0;
+		for(Esame e : listaEsami) {
+			if(e.getVoto().superato()) {
+				result=result+e.getAf().getCfu();
+			}
+		}
+		return result;
+	}
+	
+	public double mediaPesata() {
+		double nominatore=0;
+		for(Esame e : listaEsami) {
+			if((e.getVoto().superato()) && (e.getVoto().compareTo(Voto.IDONEO)!=0)){
+				nominatore=nominatore+(e.getVoto().getValue().getAsInt()*e.getAf().getCfu());
+			}
+		}
+		double result = nominatore/creditiAcquisitiDaVoto();
+		return result;
+	}
+	
+	private double creditiAcquisitiDaVoto() {
+		double result=0;
+		for(Esame e : listaEsami) {
+			if((e.getVoto().superato()) && (e.getVoto().compareTo(Voto.IDONEO)!=0)) {
+				result=result+e.getAf().getCfu();
+			}
+		}
+		return result;
+	}
+
+	@Override
+	public String toString() {
+		return listaEsami.stream().map(Esame::toString).collect(Collectors.joining(System.lineSeparator()));
+	}
+	
+}

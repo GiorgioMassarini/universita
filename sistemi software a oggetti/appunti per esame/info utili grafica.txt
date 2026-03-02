@@ -1,0 +1,48 @@
+------------------------------------------------------------------
+INIZIALIZZARE E POPOLARE DUE COMBOBOX
+
+comboEntrata=new ComboBox<>();
+comboEntrata.setItems(FXCollections.observableArrayList(controller.elencoCaselli()));
+comboUscita=new ComboBox<>();
+comboUscita.setItems(FXCollections.observableArrayList(controller.elencoCaselli()));
+(con comboEntrata.getValue() ricevi il valore selezionato, 
+null se non è selezionato niente)
+
+-----------------------------------------------------------------------
+AGGANCIARE BOTTONE CON GESTORE EVENTO (METODO PRIVATO)
+
+bottoneNome.setOnAction(this::metodo); //solo se il metodo non ha argomenti da passare
+bottoneNome.setOnAction(event -> metodo(arg1, arg2, ecc...)); //se il metodo ha argomenti da passare
+searchButton.setOnAction(e -> handleSearch()); //altro esempio che va bene
+---------------------------------------------------------------------
+FAR USCIRE UN ERRORE A SCHERMO
+
+Controller.alert("MessErrore1","MessErrore2","MessErrore3");
+---------------------------------------------------------------------------
+GARANTIRE LA MUTUA ESCLUSIONE TRA DUE RADIOBUTTON
+
+//garantire la mutua esclusione fra i due radiobutton
+ToggleGroup group = new ToggleGroup();
+radioUno.setToggleGroup(group);	
+radioDue.setToggleGroup(group);
+// Imposta una selezione iniziale (opzionale)
+agevolata.setSelected(true);
+
+radioUno.setOnAction(ev -> settaModalita(Modalita.AGEVOLATA));
+radioDue.setOnAction(ev -> settaModalita(Modalita.ESPERTA));
+
+if(radioUno.isSelected()) //comando che restituisce true o false se il radiobutton è selezionato
+-------------------------------------------------------------------------
+INSERIRE TESTO IN UNA TextArea
+
+outputArea = new TextArea();
+outputArea.setText("STRINGA TESTO");
+outputArea.setEditable(false); // far si che non sia editabile
+----------------------------------------------------------------------------
+DISATTIVARE O ATTIVARE UN BOTTONE
+
+bottone.setDisable(true) //DISATTIVA IL BOTTONE
+bottone.setDisable(false) //ATTIVA IL BOTTONE
+
+
+
