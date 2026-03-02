@@ -1,0 +1,4 @@
+Lezioni di Fondamenti T2	ore previste: 80
+Lezioni di Linguaggi		ore previste: 64
+Progetto Peonie				ore previste: 350
+Progetto Innova				ore previste: 700
