@@ -1,0 +1,31 @@
+Prodotti;10/02/25;17/02/25;24/02/25;03/03/25;10/03/25;17/03/25;24/03/25;31/03/25;07/04/25;14/04/25;21/04/25;28/04/25;02/05/25;03/05/25;04/05/25
+Albicocche - nostrane;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 2,65;€ 2,45;€ 2,21;€ 2,00
+Ciliegie - Bigarreau; NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 8,00;€ 5,50;€ 5,50;€ 4,63
+Ciliegie - Celeste;   NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 7,50
+Ciliegie - Dure;      NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 4,88;€ 4,63;€ 4,25
+Ciliegie - Durone;    NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 3,85
+Ciliegie - Ferrovia;  NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 6,00
+Ciliegie - Giorgia;   NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 5,50;€ 5,75
+Ciliegie - Tenere;    NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 9,50;€ 3,33;€ 3,83;€ 3,40
+Fragole - Candonga;€ 5,00;€ 4,57;€ 4,10;€ 3,87;€ 3,59;€ 3,53;€ 3,15;€ 3,09;€ 3,09;€ 3,14;€ 3,09;€ 2,91;€ 2,84;€ 2,74;€ 2,61
+Fragole - nostrane;€ 3,82;€ 3,15;€ 2,85;€ 2,75;€ 2,65;€ 2,54;€ 2,29;€ 2,22;€ 2,22;€ 2,14;€ 2,13;€ 2,64;€ 2,59;€ 2,35;€ 2,21
+Kiwi - Gold (Polpa gialla);€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,85;€ 2,45;€ 2,45;€ 2,45;€ 2,45
+Kiwi - Hayward;€ 1,83;€ 1,83;€ 1,82;€ 1,82;€ 1,82;€ 1,82;€ 1,82;€ 1,83;€ 1,83;€ 1,83;€ 1,83;€ 1,87;€ 1,87;€ 1,89;€ 1,86
+Mele - Annurca;€ 1,38;€ 1,38;€ 1,38;€ 1,38;€ 1,38;€ 1,38;€ 1,38;€ 1,58;€ 1,58;€ 1,58;€ 1,58;€ 1,58;€ 1,58;€ 1,58;€ 1,58
+Mele - Cripps Pink;€ 1,35;€ 1,35;€ 1,35;€ 1,36;€ 1,36;€ 1,36;€ 1,36;€ 1,36;€ 1,39;€ 1,39;€ 1,39;€ 1,39;€ 1,50;€ 1,50;€ 1,50
+Mele - Fuji;€ 0,98;€ 0,98;€ 0,98;€ 0,98;€ 0,98;€ 0,98;€ 0,98;€ 0,98;€ 0,96;€ 0,96;€ 0,96;€ 0,97;€ 0,97;€ 0,98;€ 0,98
+Mele - Golden delicious;€ 0,80;€ 0,80;€ 0,80;€ 0,81;€ 0,81;€ 0,81;€ 0,81;€ 0,81;€ 0,81;€ 0,82;€ 0,82;€ 0,82;€ 0,83;€ 0,83;€ 0,83
+Mele - Granny smith;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,84;€ 0,84;€ 0,84;€ 0,84;€ 0,84;€ 0,84;€ 0,84;€ 0,84
+Mele - Morgenduft(Imperatore);€ 0,69;€ 0,69;€ 0,69;€ 0,69;€ 0,69;€ 0,69;€ 0,69;€ 0,75;€ 0,77;€ 0,77;€ 0,77;€ 0,77;€ 0,83;€ 0,83;€ 0,83
+Mele - Renetta canada;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,31;€ 1,32;€ 1,32;€ 1,32;€ 1,32
+Mele - Stark delicious;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,73;€ 0,74;€ 0,74;€ 0,74;€ 0,74
+Nettarine - Polpa bianca;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 1,80
+Nettarine - Polpa gialla;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 2,10;€ 1,95;€ 1,78
+Pere - Conference;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,16;€ 1,09;€ 1,09;€ 1,12;€ 1,02;€ 1,02
+Pesche - Polpa bianca;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 1,70
+Pesche - Polpa gialla;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 1,90;€ 1,75;€ 1,63
+Albicocche - Mogador;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN;€ 2,65;€ 2,40;€ 2,20;NaN
+Pere - Decana del comizio;€ 1,48;€ 1,48;€ 1,48;€ 1,48;€ 1,35;€ 1,35;€ 1,35;€ 1,35;€ 1,35;€ 1,35;€ 1,40;€ 1,18;NaN;NaN;NaN
+Pere - Kaiser;€ 1,51;€ 1,51;€ 1,51;€ 1,51;€ 1,52;€ 1,52;€ 1,52;€ 1,52;€ 1,52;€ 1,52;€ 1,52;NaN;NaN;NaN;NaN
+Mele - Gala Gruppo;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,83;€ 0,83;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN
+Pere - Abate fetel;€ 1,85;€ 1,81;€ 1,81;€ 1,81;€ 1,81;€ 1,81;€ 1,79;NaN;NaN;NaN;NaN;NaN;NaN;NaN;NaN
