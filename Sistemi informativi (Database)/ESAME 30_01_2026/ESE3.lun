@@ -1,0 +1,3986 @@
+DBLUN10
+*SYSTEM
+object_id double
+flag int
+name char[100]
+short_name char[12]
+creation_date char[10]
+semantics_desc desc
+technical_desc desc
+sys_mo rel
+sys_sch rel
+link rel
+user_viewable rel
+viewable_note rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*META_OBJECT
+object_id double
+flag int
+name char[100]
+type short
+semantics_desc desc
+mo_mp rel
+concept_mo rel
+*META_PROPERTY
+object_id double
+flag int
+name char[100]
+type short
+funct int
+semantics_desc desc
+*SCHEMA
+object_id double
+flag int
+name char[100]
+short_name char[12]
+version char[16]
+creation_date char[10]
+last_update char[10]
+lock char
+type char
+semantics_desc desc
+technical_desc desc
+trace_on int
+from rel
+to rel
+is_in rel
+sch_do rel
+sch_col rel
+sch_inst rel
+owner_pu rel
+user_viewable rel
+viewable_note rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*ENTITY_TYPE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+owner_att rel
+owner_group rel
+col_do2 rel
+owner_pu rel
+et_role1 rel
+decomp rel
+general rel
+domain rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*REL_TYPE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+owner_att rel
+owner_group rel
+col_do2 rel
+owner_pu rel
+rt_type rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*CO_ATTRIBUTE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+min_rep unsigned int
+max_rep unsigned int
+set_type char
+owner_att rel
+owner_group rel
+col_do2 rel
+domain rel
+at_ro_gr rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*SI_ATTRIBUTE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+min_rep unsigned int
+max_rep unsigned int
+set_type char
+stable char
+recyclable char
+type char
+length unsigned int
+decim short
+owner_group rel
+col_do2 rel
+domain rel
+at_ro_gr
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*ROLE
+object_id double
+flag int
+name char[100]
+min_con unsigned int
+max_con unsigned int
+aggregation char
+semantics_desc desc
+technical_desc desc
+at_ro_gr
+et_role2 rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*ET_ROLE
+object_id double
+flag int
+*GROUP
+object_id double
+flag int
+name char[100]
+type char
+funct int
+min_rep unsigned int
+max_rep unsigned int
+semantics_desc desc
+technical_desc desc
+at_ro_gr
+gr_comp rel
+member_gr rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*COMPONENT
+object_id double
+flag int
+*MEMBER_CST
+object_id double
+flag int
+mem_role char
+*CONSTRAINT
+object_id double
+flag int
+type char
+mbr_cst rel
+go_uo rel
+*COLLECTION
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+col_do1 rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*COL_DO
+object_id double
+flag int
+*CLUSTER
+object_id double
+flag int
+cluster_id char[100]
+type int
+criterion char[30]
+special rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*SUB_TYPE
+object_id double
+flag int
+value char[30]
+go_uo rel
+*USER_VIEW
+object_id double
+flag int
+name char[100]
+type int
+zoom int
+reduce int
+xgrid int
+ygrid int
+font_size int
+font_name char[30]
+text_font_size int
+text_font_name char[30]
+markplan int
+uv_uo rel
+*USER_OBJECT
+object_id double
+flag int
+posx int
+posy int
+color int
+*CONNECTION
+object_id double
+flag int
+type char[10]
+seq_nbr int
+*TEXT
+object_id double
+flag int
+name char[100]
+version char[16]
+path char[260]
+creation_date char[10]
+last_update char[10]
+type_of_file char[10]
+num_line int
+lock char
+sem_desc desc
+tech_desc desc
+from rel
+to rel
+is_in rel
+text_inst rel
+line rel
+user_viewable rel
+viewable_note rel
+go_uo rel
+go_st rel
+act_arg rel
+go_nn_note rel
+*LINE
+object_id double
+flag int
+num int
+description desc
+go_uo rel
+*PROD_SET
+object_id double
+flag int
+name char[100]
+version char[16]
+creation_date char[10]
+last_update char[10]
+lock char
+sem_desc desc
+tech_desc desc
+from rel
+to rel
+is_in rel
+contains rel
+set_inst rel
+go_uo rel
+*PROD_SET_ELEM
+object_id double
+flag int
+*PROC_UNIT
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+type char
+mode char
+owner_group rel
+col_do2 rel
+p_decl rel
+p_fct_call rel
+invokes_pu rel
+pu_made_of rel
+cons_pu rel
+go_st rel
+act_arg rel
+go_nn_note rel
+go_uo rel
+*ENVIRONMENT
+object_id double
+flag int
+name char[100]
+type char
+mode char
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*STATE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+owner_group rel
+col_do2 rel
+st_env rel
+go_nn_note rel
+go_uo rel
+*ELEMENT
+object_id double
+flag int
+type char
+description desc
+p_made_of rel
+p_part_of rel
+go_nn_note rel
+go_uo rel
+*REL_ELEMENT
+object_id double
+flag int
+name char[100]
+type char
+mode char
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*P_EXPRESSION
+object_id double
+flag int
+oper int
+constant char[255]
+description desc
+sub_expression rel
+go_uo rel
+*CONSUMPTION
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+owner_group rel
+col_do2 rel
+cons_res rel
+cons_role rel
+cons_pu rel
+go_st rel
+act_arg rel
+go_nn_note rel
+go_uo rel
+*CONS_PU
+object_id double
+flag int
+name char[100]
+min_card int
+max_card int
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*CONS_RES
+object_id double
+flag int
+name char[100]
+min_card int
+max_card int
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*CONS_ROLE
+object_id double
+flag int
+name char[100]
+min_card int
+max_card int
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*RESOURCE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+type char
+owner_group rel
+col_do2 rel
+cons_res rel
+cp_res rel
+re_gen rel
+re_spec rel
+go_st rel
+act_arg rel
+go_nn_note rel
+go_uo rel
+*RES_ROLE
+object_id double
+flag int
+name char[100]
+short_name char[12]
+semantics_desc desc
+technical_desc desc
+owner_group rel
+col_do2 rel
+cons_role rel
+cp_rol rel
+ro_gen rel
+ro_spec rel
+go_st rel
+act_arg rel
+go_nn_note rel
+go_uo rel
+*RE_ISA
+object_id double
+flag int
+name char[100]
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*RO_ISA
+object_id double
+flag int
+name char[100]
+semantics_desc desc
+technical_desc desc
+go_nn_note rel
+go_uo rel
+*CAN_PLAY
+object_id double
+flag int
+go_nn_note rel
+go_uo rel
+*DYNAMIC_PROPERTY
+mp_id double
+object_id double
+value text
+*METHODOLOGY
+object_id double
+title char[100]
+version char[16]
+date char[10]
+author char[100]
+help_file char[255]
+semantics_desc desc
+user_viewable rel
+viewable_note rel
+*STATEMENT
+object_id double
+type int
+state char
+glbtrsf trsfscr
+sub_stmt rel
+strategy rel
+condition rel
+stmt_param rel
+pp_inst rel
+ep_inst rel
+cs_inst rel
+*EXPRESSION
+object_id double
+type int
+not char
+weak char
+sub_expression rel
+cond_dec rel
+expr_param rel
+*PARAMETER
+object_id double
+integer int
+string char[255]
+analysis_expr anallist
+type char
+mode char
+usage char
+*PROCESS_TYPE
+object_id double
+name char[100]
+title char[100]
+explain char[100]
+semantics_desc desc
+perform rel
+form_arg rel
+invokes rel
+*TOOLBOX
+object_id double
+name char[100]
+title char[100]
+functions list_int
+semantics_desc desc
+uses rel
+*TEXT_TYPE
+object_id double
+name char[100]
+title char[100]
+weak char
+min_mul int
+max_mul int
+usage char
+semantics_desc desc
+act_arg rel
+ttext_inst rel
+*SCHEMA_TYPE
+object_id double
+name char[100]
+title char[100]
+weak char
+min_mul int
+max_mul int
+usage char
+semantics_desc desc
+act_arg rel
+tschema_inst rel
+*PROD_SET_TYPE
+object_id double
+name char[100]
+title char[100]
+min_mul int
+max_mul int
+usage char
+semantics_desc desc
+actarg rel
+tset_inst rel
+*TEXT_MODEL
+object_id double
+name char[100]
+title char[100]
+semantics_desc desc
+default_ext list_char[3]
+grammar char[255]
+model_expr rel
+specialization rel
+text_conform rel
+*SCHEMA_MODEL
+object_id double
+name char[100]
+title char[100]
+semantics_desc desc
+constraints anallist
+model_expr rel
+specialization rel
+schema_conform rel
+have_concept rel
+*MOD_CONCEPT
+object_id double
+contextual_name char[100]
+funct1 unsigned int
+funct2 unsigned int
+*ENGINEERING_PROCESS
+object_id double
+name char[100]
+start_date char[10]
+start_time char[10]
+end_date char[10]
+end_time char[10]
+in_progress char
+semantics_desc desc
+flag int
+io_proc rel
+made_of rel
+start rel
+user_viewable rel
+viewable_note rel
+go_uo rel
+go_nn_note rel
+*DECISION
+object_id double
+name char[100]
+start_date char[10]
+start_time char[10]
+end_date char[10]
+end_time char[10]
+in_progress char
+yes_no char
+semantics_desc desc
+flag int
+io_proc rel
+go_uo rel
+go_nn_note rel
+*PRIMITIVE_PROCESS
+object_id double
+name char[100]
+start_date char[10]
+start_time char[10]
+end_date char[10]
+end_time char[10]
+in_progress char
+semantics_desc desc
+flag int
+io_proc rel
+go_uo rel
+go_nn_note rel
+*CONTROL_STRUCTURE
+object_id double
+name char[100]
+start_date char[10]
+start_time char[10]
+end_date char[10]
+end_time char[10]
+in_progress char
+golist list_int
+semantics_desc desc
+io_proc rel
+*SCHEMA_INSTANCE
+object_id double
+usage char
+checkpoint char[100]
+flag int
+go_nn_note rel
+*TEXT_INSTANCE
+object_id double
+usage char
+checkpoint char[100]
+flag int
+go_nn_note rel
+*PROD_SET_INSTANCE
+object_id double
+usage char
+checkpoint char[100]
+flag int
+go_nn_note rel
+*NOTE
+object_id double
+flag int
+description desc
+note_nn_note rel
+go_uo rel
+*NN_NOTE
+object_id double
+flag int
+*LOG
+schema double
+length long
+text FILE
+*
+*0
+0
+0
+SI-T 30/01/2026
+
+20100127
+
+
+21
+20
+19
+18
+17
+16
+15
+14
+13
+12
+11
+10
+9
+8
+7
+6
+5
+4
+3
+2
+-
+2239
+2182
+2117
+1671
+56
+-
+48
+-
+1
+-
+-
+-
+-
+-
+-
+*1
+21
+0
+In-out
+43
+
+1219
+40
+-
+-
+*1
+20
+0
+State
+61
+
+1225
+46
+-
+-
+*1
+19
+0
+Actor generalization
+62
+
+1221
+42
+-
+-
+*1
+18
+0
+Actor
+48
+
+1220
+41
+-
+-
+*1
+17
+0
+Actor association role
+66
+
+1224
+45
+-
+-
+*1
+16
+0
+Use case association role
+68
+
+1223
+44
+-
+-
+*1
+15
+0
+Association
+47
+
+1222
+43
+-
+-
+*1
+14
+0
+Processing unit relation
+45
+
+1226
+47
+-
+-
+*1
+13
+0
+Processing unit
+40
+
+39
+38
+-
+-
+*1
+12
+0
+Collection
+4
+
+35
+34
+1546
+-
+-
+*1
+11
+0
+Role
+14
+
+27
+26
+-
+-
+*1
+10
+0
+Group
+16
+
+37
+36
+1548
+-
+-
+*1
+9
+0
+Compound attribute
+6
+
+33
+32
+-
+-
+*1
+8
+0
+Atomic attribute
+7
+
+1218
+1217
+31
+30
+29
+28
+1547
+-
+-
+*1
+7
+0
+Rel-type
+12
+
+25
+24
+-
+-
+*1
+6
+0
+Entity type
+11
+
+23
+22
+1545
+-
+-
+*1
+5
+0
+Product set
+41
+
+1216
+-
+-
+*1
+4
+0
+Text
+31
+
+1214
+1215
+-
+-
+*1
+3
+0
+Schema
+2
+
+1212
+1213
+1544
+-
+-
+*1
+2
+0
+Project
+1
+
+-
+-
+*2
+40
+0
+Stereotype
+86
+14
+
+*2
+1219
+0
+MappingOID
+78
+10
+
+*2
+46
+0
+Stereotype
+86
+14
+#VALUES=
+ET
+RT
+Att
+Coll
+#
+*2
+1225
+0
+MappingOID
+78
+10
+
+*2
+42
+0
+Stereotype
+86
+14
+
+*2
+1221
+0
+MappingOID
+78
+10
+
+*2
+41
+0
+Stereotype
+86
+14
+
+*2
+1220
+0
+MappingOID
+78
+10
+
+*2
+45
+0
+Stereotype
+86
+14
+
+*2
+1224
+0
+MappingOID
+78
+10
+
+*2
+44
+0
+Stereotype
+86
+14
+
+*2
+1223
+0
+MappingOID
+78
+10
+
+*2
+43
+0
+Stereotype
+86
+14
+
+*2
+1222
+0
+MappingOID
+78
+10
+
+*2
+47
+0
+Stereotype
+86
+14
+
+*2
+1226
+0
+MappingOID
+78
+10
+
+*2
+38
+0
+Stereotype
+86
+14
+
+*2
+39
+0
+MappingOID
+78
+10
+
+*2
+1546
+0
+line
+86
+0
+
+*2
+34
+0
+Stereotype
+86
+14
+
+*2
+35
+0
+MappingOID
+78
+10
+
+*2
+26
+0
+Stereotype
+86
+14
+
+*2
+27
+0
+MappingOID
+78
+10
+
+*2
+1548
+0
+line
+86
+0
+
+*2
+36
+0
+User-constraint
+86
+1
+
+*2
+37
+0
+MappingOID
+78
+10
+
+*2
+32
+0
+Stereotype
+86
+14
+
+*2
+33
+0
+MappingOID
+78
+10
+
+*2
+1547
+0
+line
+86
+0
+
+*2
+28
+0
+Value constraint
+86
+10
+
+*2
+29
+0
+Stereotype
+86
+14
+
+*2
+30
+0
+MappingOID
+78
+10
+
+*2
+31
+0
+Default value
+86
+2
+
+*2
+1217
+0
+physType
+86
+2
+
+*2
+1218
+0
+physLen
+78
+2
+
+*2
+24
+0
+Stereotype
+86
+14
+
+*2
+25
+0
+MappingOID
+78
+10
+
+*2
+1545
+0
+line
+86
+0
+
+*2
+22
+0
+Stereotype
+86
+14
+
+*2
+23
+0
+MappingOID
+78
+10
+
+*2
+1216
+0
+Stereotype
+86
+14
+
+*2
+1215
+0
+Stereotype
+86
+14
+
+*2
+1214
+0
+productType
+86
+6
+#VALUES=
+COBOL
+CODASYL
+IMS
+Relational
+SQL
+XML
+C/C++
+Java
+#
+*2
+1544
+0
+line
+86
+0
+
+*2
+1213
+0
+Stereotype
+86
+14
+
+*2
+1212
+0
+productType
+86
+6
+#VALUES=
+COBOL
+CODASYL
+IMS
+Relational
+SQL
+XML
+C/C++
+Java
+#
+*3
+2182
+529152
+ESE3-tradotto
+
+SQL
+20260130
+20260130
+T
+E
+
+
+0
+-
+-
+-
+2207
+2203
+2201
+2199
+2197
+2195
+2231
+-
+-
+2183
+2185
+2189
+2244
+-
+-
+2184
+-
+2220
+2223
+2226
+2229
+-
+2192
+2191
+2190
+-
+-
+-
+2220
+2223
+2226
+2229
+-
+*3
+2117
+529152
+ESE3-tradotto
+
+-1-1
+20260130
+20260130
+T
+E
+
+
+0
+-
+-
+-
+2150
+2146
+2138
+2136
+2134
+2132
+2128
+-
+-
+2118
+2120
+2124
+2188
+-
+-
+2119
+-
+2170
+2173
+2176
+2179
+-
+2127
+2126
+2125
+-
+-
+-
+2170
+2173
+2176
+2179
+-
+*3
+1671
+529152
+ESE3-modificato
+
+-1
+20260130
+20260130
+T
+E
+
+
+0
+-
+-
+-
+1719
+1694
+1690
+1688
+1734
+1727
+1725
+1686
+1721
+1723
+-
+-
+1672
+1674
+1678
+2123
+-
+-
+1673
+-
+1707
+1710
+1713
+1716
+-
+1681
+1680
+1679
+-
+-
+-
+1707
+1710
+1713
+1716
+-
+*3
+56
+529152
+ESE3-input
+
+
+20100127
+20260130
+T
+E
+
+
+0
+-
+-
+-
+819
+1121
+1643
+1650
+1669
+1239
+-
+-
+57
+59
+1677
+-
+-
+58
+-
+1350
+1353
+1356
+1359
+-
+63
+241
+-
+-
+-
+1350
+1353
+1356
+1359
+-
+*4
+2207
+0
+RISULTATI
+
+
+
+2197
+2199
+2231
+-
+2209
+2233
+-
+-
+-
+-
+-
+-
+-
+2208
+-
+-
+-
+-
+*4
+2203
+0
+GIOCATORI
+
+
+
+2195
+2201
+-
+2205
+-
+-
+-
+-
+-
+-
+-
+2204
+-
+-
+-
+-
+*4
+2150
+0
+RISULTATI
+
+
+
+2134
+2136
+-
+2152
+-
+-
+-
+2159
+-
+-
+-
+-
+2151
+-
+-
+-
+-
+*4
+2146
+0
+GIOCATORI
+
+
+
+2132
+2138
+-
+2148
+-
+-
+-
+2156
+-
+-
+-
+-
+2147
+-
+-
+-
+-
+*4
+1719
+0
+RISULTATI
+
+
+
+1725
+1727
+-
+1729
+-
+-
+-
+1743
+1740
+-
+-
+-
+-
+1720
+-
+-
+-
+-
+*4
+1694
+0
+GIOCATORI
+
+
+
+1686
+1734
+-
+1696
+-
+-
+-
+1746
+-
+-
+-
+-
+1695
+-
+-
+-
+-
+*4
+1690
+0
+GIOCHI
+
+
+
+1688
+-
+1692
+-
+-
+-
+1737
+-
+-
+-
+-
+1691
+-
+-
+-
+-
+*4
+819
+0
+GIOCATORI
+
+
+
+1650
+-
+1666
+-
+-
+-
+1243
+-
+-
+-
+-
+820
+-
+-
+-
+-
+*4
+1121
+0
+GIOCHI
+
+
+
+1643
+-
+1654
+-
+-
+-
+1241
+-
+-
+-
+-
+1122
+-
+-
+-
+-
+*5
+2128
+0
+RG
+
+
+
+-
+-
+-
+-
+2157
+2154
+-
+2129
+-
+-
+-
+-
+*5
+1723
+0
+RG
+
+
+
+-
+-
+-
+-
+1742
+1745
+-
+1724
+-
+-
+-
+-
+*5
+1721
+0
+GR
+
+
+
+-
+-
+-
+-
+1736
+1739
+-
+1722
+-
+-
+-
+-
+*5
+1239
+0
+RISULTATI
+
+
+
+1669
+-
+-
+-
+-
+1240
+1242
+-
+1244
+-
+-
+-
+-
+*7
+2231
+0
+Nickname
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+2234
+-
+2232
+-
+-
+-
+-
+*7
+2201
+0
+NumRecord
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+2202
+-
+-
+-
+-
+*7
+2199
+0
+TimeStamp
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+2218
+-
+2200
+-
+-
+-
+-
+*7
+2197
+0
+Punti
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+2198
+-
+-
+-
+-
+*7
+2195
+0
+Nickname
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+2217
+-
+2196
+-
+-
+-
+-
+*7
+2138
+0
+NumRecord
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+2139
+-
+-
+-
+-
+*7
+2136
+0
+TimeStamp
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+2168
+-
+2137
+-
+-
+-
+-
+*7
+2134
+0
+Punti
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+2135
+-
+-
+-
+-
+*7
+2132
+0
+Nickname
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+2167
+-
+2133
+-
+-
+-
+-
+*7
+1734
+0
+NumRecord
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+1735
+-
+-
+-
+-
+*7
+1727
+0
+TimeStamp
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+1730
+-
+1728
+-
+-
+-
+-
+*7
+1725
+0
+Punti
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+1726
+-
+-
+-
+-
+*7
+1688
+0
+IDGioco
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+1704
+-
+1689
+-
+-
+-
+-
+*7
+1686
+0
+Nickname
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+1705
+-
+1687
+-
+-
+-
+-
+*7
+1643
+0
+IDGioco
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+1657
+-
+1644
+-
+-
+-
+-
+*7
+1650
+0
+Nickname
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+1667
+-
+1651
+-
+-
+-
+-
+*7
+1669
+0
+Punti
+
+
+
+1
+1
+S
+F
+T
+A
+1
+0
+-
+-
+-
+-
+1670
+-
+-
+-
+-
+*8
+2157
+0
+
+1
+1
+ 
+
+
+-
+2159
+-
+2158
+-
+-
+-
+-
+*8
+2154
+0
+
+0
+N
+ 
+
+
+-
+2156
+-
+2155
+-
+-
+-
+-
+*8
+1745
+0
+
+0
+N
+ 
+
+
+-
+1746
+-
+1747
+-
+-
+-
+-
+*8
+1742
+0
+
+1
+1
+ 
+
+
+-
+1743
+-
+1744
+-
+-
+-
+-
+*8
+1739
+0
+
+1
+N
+ 
+
+
+-
+1740
+-
+1741
+-
+-
+-
+-
+*8
+1736
+0
+
+0
+N
+ 
+
+
+-
+1737
+-
+1738
+-
+-
+-
+-
+*8
+1242
+0
+
+1
+N
+ 
+
+
+-
+1243
+-
+1246
+-
+-
+-
+-
+*8
+1240
+0
+
+0
+N
+ 
+
+
+-
+1241
+-
+1245
+-
+-
+-
+-
+*9
+2159
+0
+*9
+2156
+0
+*9
+1746
+0
+*9
+1743
+0
+*9
+1740
+0
+*9
+1737
+0
+*9
+1243
+0
+*9
+1241
+0
+*10
+2233
+0
+FKRG
+A
+64
+0
+N
+
+
+-
+2234
+-
+2236
+-
+2238
+-
+-
+-
+-
+*10
+2209
+0
+ID_RISULTATI
+A
+65
+0
+N
+
+
+-
+2218
+-
+-
+2210
+-
+-
+-
+-
+*10
+2205
+0
+ID_GIOCATORI
+A
+65
+0
+N
+
+
+-
+2217
+-
+2237
+-
+2206
+-
+-
+-
+-
+*10
+2152
+0
+IDRISULTATI
+A
+1
+0
+N
+
+
+-
+2168
+-
+-
+2153
+-
+-
+-
+-
+*10
+2148
+0
+IDGIOCATORI
+A
+1
+0
+N
+
+
+-
+2167
+-
+-
+2149
+-
+-
+-
+-
+*10
+1729
+0
+IDRISULTATI
+A
+1
+0
+N
+
+
+-
+1730
+-
+-
+1731
+-
+-
+-
+-
+*10
+1696
+0
+IDGIOCATORI
+A
+1
+0
+N
+
+
+-
+1705
+-
+-
+1697
+-
+-
+-
+-
+*10
+1692
+0
+IDORDINI
+A
+1
+0
+1
+
+
+-
+1704
+-
+-
+1693
+-
+-
+-
+-
+*10
+1666
+0
+IDGIOCATORI
+A
+1
+0
+N
+
+
+-
+1667
+-
+-
+1668
+-
+-
+-
+-
+*10
+1654
+0
+IDORDINI
+A
+1
+0
+1
+
+
+-
+1657
+-
+-
+1656
+-
+-
+-
+-
+*11
+2234
+0
+*11
+2218
+0
+*11
+2217
+0
+*11
+2168
+0
+*11
+2167
+0
+*11
+1730
+0
+*11
+1705
+0
+*11
+1704
+0
+*11
+1657
+0
+*11
+1667
+0
+*12
+2237
+0
+T
+*12
+2236
+0
+O
+*13
+2235
+0
+I
+2237
+2236
+-
+-
+*18
+2241
+0
+
+0
+100
+100
+0
+0
+0
+
+0
+
+1
+-
+*18
+2184
+0
+
+23
+110
+100
+0
+0
+14
+Times New Roman
+0
+
+1
+2192
+2196
+2198
+2200
+2202
+2204
+2206
+2208
+2210
+2221
+2224
+2227
+2230
+2232
+2238
+-
+*18
+2119
+0
+
+23
+110
+100
+0
+0
+14
+Times New Roman
+0
+
+1
+2127
+2129
+2133
+2135
+2137
+2139
+2147
+2149
+2151
+2153
+2155
+2158
+2171
+2174
+2177
+2180
+-
+*18
+1673
+0
+
+23
+110
+100
+0
+0
+14
+Times New Roman
+0
+
+1
+1681
+1687
+1689
+1691
+1693
+1695
+1697
+1708
+1711
+1714
+1717
+1720
+1722
+1724
+1726
+1728
+1731
+1735
+1738
+1741
+1744
+1747
+-
+*18
+54
+0
+
+23
+100
+100
+0
+0
+0
+
+0
+
+1
+55
+241
+1680
+1718
+2126
+2181
+2191
+2248
+2249
+2250
+-
+*18
+49
+0
+
+0
+100
+100
+0
+0
+0
+
+0
+
+1
+-
+*18
+58
+0
+
+23
+110
+100
+0
+0
+14
+Times New Roman
+0
+
+1
+63
+820
+1122
+1244
+1245
+1246
+1351
+1354
+1357
+1360
+1644
+1651
+1656
+1668
+1670
+-
+*18
+1
+0
+
+23
+100
+100
+0
+0
+0
+
+0
+
+1
+1679
+2125
+2190
+2247
+-
+*19
+2250
+0
+31000
+147550
+0
+*19
+2249
+0
+31000
+117550
+0
+*19
+2248
+0
+31000
+162550
+0
+*19
+2247
+0
+0
+80000
+0
+*19
+2238
+0
+0
+0
+0
+*19
+2232
+0
+0
+0
+0
+*19
+2230
+0
+97199
+100415
+0
+*19
+2227
+0
+91880
+158743
+0
+*19
+2224
+0
+59362
+24003
+0
+*19
+2221
+0
+61559
+133515
+0
+*19
+2210
+0
+0
+0
+0
+*19
+2208
+0
+31091
+51091
+0
+*19
+2206
+0
+0
+0
+0
+*19
+2204
+0
+137411
+50685
+0
+*19
+2202
+0
+0
+0
+0
+*19
+2200
+0
+0
+0
+0
+*19
+2198
+0
+0
+0
+0
+*19
+2196
+0
+0
+0
+0
+*19
+2192
+0
+103096
+10210
+0
+*19
+2191
+0
+31000
+132550
+0
+*19
+2190
+0
+0
+60000
+0
+*19
+2181
+0
+31000
+87550
+0
+*19
+2180
+0
+61559
+133515
+0
+*19
+2177
+0
+59362
+24003
+0
+*19
+2174
+0
+91880
+158743
+0
+*19
+2171
+0
+97199
+100415
+0
+*19
+2158
+0
+62289
+50421
+0
+*19
+2155
+0
+106328
+50303
+0
+*19
+2153
+0
+0
+0
+0
+*19
+2151
+0
+31091
+51091
+0
+*19
+2149
+0
+0
+0
+0
+*19
+2147
+0
+137411
+50685
+0
+*19
+2139
+0
+0
+0
+0
+*19
+2137
+0
+0
+0
+0
+*19
+2135
+0
+0
+0
+0
+*19
+2133
+0
+0
+0
+0
+*19
+2129
+0
+84007
+50026
+0
+*19
+2127
+0
+103096
+10210
+0
+*19
+2126
+0
+31000
+102550
+0
+*19
+2125
+0
+0
+40000
+0
+*19
+1747
+0
+167821
+51217
+0
+*19
+1744
+0
+129323
+51574
+0
+*19
+1741
+0
+75586
+52680
+0
+*19
+1738
+0
+40048
+53137
+0
+*19
+1735
+0
+0
+0
+0
+*19
+1731
+0
+0
+0
+0
+*19
+1728
+0
+0
+0
+0
+*19
+1726
+0
+0
+0
+0
+*19
+1724
+0
+148594
+51402
+0
+*19
+1722
+0
+57727
+53273
+0
+*19
+1720
+0
+101636
+51818
+0
+*19
+1718
+0
+31000
+57550
+0
+*19
+1717
+0
+97199
+100415
+0
+*19
+1714
+0
+91880
+158743
+0
+*19
+1711
+0
+59362
+24003
+0
+*19
+1708
+0
+61559
+133515
+0
+*19
+1697
+0
+0
+0
+0
+*19
+1695
+0
+194593
+50957
+0
+*19
+1693
+0
+0
+0
+0
+*19
+1691
+0
+16406
+52956
+0
+*19
+1689
+0
+0
+0
+0
+*19
+1687
+0
+0
+0
+0
+*19
+1681
+0
+103096
+10210
+0
+*19
+1680
+0
+31000
+72550
+0
+*19
+1679
+0
+0
+20000
+0
+*19
+1360
+0
+57287
+82332
+0
+*19
+1357
+0
+75726
+28546
+0
+*19
+1354
+0
+91790
+94380
+0
+*19
+1351
+0
+98107
+64687
+0
+*19
+55
+0
+100200
+10000
+0
+*19
+1668
+0
+0
+0
+0
+*19
+1656
+0
+0
+0
+0
+*19
+1245
+0
+49847
+41321
+0
+*19
+1246
+0
+100185
+41321
+0
+*19
+1644
+0
+0
+0
+0
+*19
+1651
+0
+0
+0
+0
+*19
+1670
+0
+0
+0
+0
+*19
+1244
+0
+75190
+41321
+0
+*19
+820
+0
+129957
+41321
+0
+*19
+1122
+0
+23498
+41321
+0
+*19
+241
+0
+31000
+42550
+0
+*19
+63
+0
+17187
+8028
+0
+*21
+2239
+0
+ESE3.sql
+1
+C:\Users\s0001164426\Desktop
+20260130
+20260130
+G_STD_SQL
+0
+T
+
+
+-
+-
+-
+2240
+2245
+2246
+-
+-
+2241
+-
+-
+2248
+2247
+-
+-
+-
+-
+*40
+27
+2157
+1742
+*40
+27
+2154
+1745
+*40
+27
+1745
+1745
+*40
+27
+1742
+1742
+*40
+27
+1739
+1739
+*40
+27
+1736
+1736
+*40
+27
+1242
+1242
+*40
+27
+1240
+1240
+*40
+37
+2233
+1723
+*40
+1548
+2233
+2239:258,2239:269
+*40
+37
+2209
+1729
+*40
+1548
+2209
+2239:247,2239:266
+*40
+37
+2205
+1666
+*40
+1548
+2205
+2239:252,2239:260,2239:272
+*40
+37
+2152
+1729
+*40
+37
+2148
+1666
+*40
+37
+1729
+1729
+*40
+37
+1696
+1666
+*40
+37
+1692
+1654
+*40
+37
+1666
+1666
+*40
+37
+1654
+1654
+*40
+30
+2231
+1650
+*40
+1547
+2231
+2239:246
+*40
+30
+2201
+1734
+*40
+1547
+2201
+2239:251
+*40
+30
+2199
+1727
+*40
+1547
+2199
+2239:245
+*40
+30
+2197
+1725
+*40
+1547
+2197
+2239:244
+*40
+30
+2195
+1650
+*40
+1547
+2195
+2239:250
+*40
+30
+2138
+1734
+*40
+30
+2136
+1727
+*40
+30
+2134
+1725
+*40
+30
+2132
+1650
+*40
+30
+1734
+1734
+*40
+30
+1727
+1727
+*40
+30
+1725
+1725
+*40
+30
+1688
+1643
+*40
+30
+1686
+1650
+*40
+30
+1643
+1643
+*40
+30
+1650
+1650
+*40
+30
+1669
+1669
+*40
+25
+2128
+1723
+*40
+25
+1723
+1723
+*40
+25
+1721
+1721
+*40
+25
+1239
+1239
+*40
+23
+2207
+1719
+*40
+1545
+2207
+2239:243
+*40
+23
+2203
+819
+*40
+1545
+2203
+2239:249
+*40
+23
+2150
+1719
+*40
+23
+2146
+819
+*40
+23
+1719
+1719
+*40
+23
+1694
+819
+*40
+23
+1690
+1121
+*40
+23
+819
+819
+*40
+23
+1121
+1121
+*40
+1544
+2182
+2239:233
+*41
+48
+
+
+20100127
+
+
+
+49
+-
+-
+*42
+2242
+17
+0
+-
+-
+-
+-
+-
+2243
+-
+-
+-
+*42
+2186
+19
+0
+-
+-
+-
+-
+-
+2187
+-
+-
+-
+*42
+2121
+19
+0
+-
+-
+-
+-
+-
+2122
+-
+-
+-
+*42
+1675
+19
+0
+-
+-
+-
+-
+-
+1676
+-
+-
+-
+*42
+51
+13
+0
+-
+-
+52
+-
+-
+-
+-
+-
+-
+*45
+52
+No_method
+No method
+
+
+48
+-
+-
+-
+*46
+50
+Everything
+Do whatever you want
+14001
+-
+
+51
+-
+*53
+53
+SI-T 30/01/2026
+20100127
+114818
+
+
+T
+
+0
+57
+59
+1672
+1674
+2118
+2120
+2183
+2185
+2240
+2246
+-
+1676
+2122
+2187
+2243
+-
+48
+-
+54
+-
+-
+55
+-
+-
+*55
+2243
+Generate Standard SQL
+20260130
+163012
+20260130
+163012
+F
+
+0
+2244
+2245
+-
+2250
+-
+-
+*55
+2187
+Relational design
+20260130
+163012
+20260130
+163012
+F
+
+0
+2188
+2189
+-
+2249
+-
+-
+*55
+2122
+Schema copy
+20260130
+162915
+20260130
+162915
+F
+
+0
+2123
+2124
+-
+2181
+-
+-
+*55
+1676
+Schema copy
+20260130
+150730
+20260130
+150730
+F
+
+0
+1677
+1678
+-
+1718
+-
+-
+*57
+2244
+i
+
+0
+-
+*57
+2189
+o
+
+0
+-
+*57
+2188
+i
+
+0
+-
+*57
+2185
+n
+
+0
+-
+*57
+2183
+C
+
+0
+-
+*57
+2124
+o
+
+0
+-
+*57
+2123
+i
+
+0
+-
+*57
+2120
+n
+
+0
+-
+*57
+2118
+C
+
+0
+-
+*57
+1678
+o
+
+0
+-
+*57
+1677
+i
+
+0
+-
+*57
+1674
+n
+
+0
+-
+*57
+1672
+C
+
+0
+-
+*57
+59
+n
+
+0
+-
+*57
+57
+C
+
+0
+-
+*58
+2246
+n
+
+0
+-
+*58
+2245
+o
+
+0
+-
+*58
+2240
+C
+
+0
+-
+*60
+2228
+0
+Specifiche aggiuntive: Si tenga traccia di tutti i punteggi dei giocatori, con un timestamp
+che identifica univocamente ogni risultato, e di quante volte (NumRecord, default 0) 
+un giocatore è diventato primo (anche a pari merito) in qualche gioco.
+NB: se un giocatore era già primo e migliora il suo punteggio NumRecord non va incrementato.
+2229
+-
+2230
+-
+*60
+2225
+0
+Operazioni: Si inserisca un nuovo risultato (usando il timestamp attuale) ed eventualmente
+si aggiorni il numero di record ottenuti dal giocatore.
+2226
+-
+2227
+-
+*60
+2222
+1
+RECORD
+2223
+-
+2224
+-
+*60
+2219
+0
+Traduzione: si traduca tutto ad eccezione di GIOCHI.
+2220
+-
+2221
+-
+*60
+2178
+0
+Traduzione: si traduca tutto ad eccezione di GIOCHI.
+2179
+-
+2180
+-
+*60
+2175
+1
+RECORD
+2176
+-
+2177
+-
+*60
+2172
+0
+Operazioni: Si inserisca un nuovo risultato (usando il timestamp attuale) ed eventualmente
+si aggiorni il numero di record ottenuti dal giocatore.
+2173
+-
+2174
+-
+*60
+2169
+0
+Specifiche aggiuntive: Si tenga traccia di tutti i punteggi dei giocatori, con un timestamp
+che identifica univocamente ogni risultato, e di quante volte (NumRecord, default 0) 
+un giocatore è diventato primo (anche a pari merito) in qualche gioco.
+NB: se un giocatore era già primo e migliora il suo punteggio NumRecord non va incrementato.
+2170
+-
+2171
+-
+*60
+1715
+0
+Specifiche aggiuntive: Si tenga traccia di tutti i punteggi dei giocatori, con un timestamp
+che identifica univocamente ogni risultato, e di quante volte (NumRecord, default 0) 
+un giocatore è diventato primo (anche a pari merito) in qualche gioco.
+NB: se un giocatore era già primo e migliora il suo punteggio NumRecord non va incrementato.
+1716
+-
+1717
+-
+*60
+1712
+0
+Operazioni: Si inserisca un nuovo risultato (usando il timestamp attuale) ed eventualmente
+si aggiorni il numero di record ottenuti dal giocatore.
+1713
+-
+1714
+-
+*60
+1709
+1
+RECORD
+1710
+-
+1711
+-
+*60
+1706
+0
+Traduzione: si traduca tutto ad eccezione di GIOCHI.
+1707
+-
+1708
+-
+*60
+1355
+1
+RECORD
+1356
+-
+1357
+-
+*60
+1352
+0
+Operazioni: Si inserisca un nuovo risultato (usando il timestamp attuale) ed eventualmente
+si aggiorni il numero di record ottenuti dal giocatore.
+1353
+-
+1354
+-
+*60
+1349
+0
+Specifiche aggiuntive: Si tenga traccia di tutti i punteggi dei giocatori, con un timestamp
+che identifica univocamente ogni risultato, e di quante volte (NumRecord, default 0) 
+un giocatore è diventato primo (anche a pari merito) in qualche gioco.
+NB: se un giocatore era già primo e migliora il suo punteggio NumRecord non va incrementato.
+1350
+-
+1351
+-
+*60
+1358
+0
+Traduzione: si traduca tutto ad eccezione di GIOCHI.
+1359
+-
+1360
+-
+*62
+2182
+20
+*POT "begin-file"
+
+*62
+2117
+20
+*POT "begin-file"
+
+*62
+1671
+20
+*POT "begin-file"
+
+*62
+56
+38
+*POT "begin-file"
+
