@@ -1,0 +1,8 @@
+Linea Rossa, frequenza 5 minuti, 06:30-21:30
+Piazza Celestini (0), via Amendola (3), via Morandi (7), largo Augusto (10), corso Roma (12), piazza S.Silvestro (16), piazzetta Galvani (21), porta Fiorentina (25)
+
+Linea Verde, frequenza 8 minuti, 06:00-22:00
+Porta Romana (0), via Garibaldi (4), via Morandi (7), largo Augusto (10), corso Roma (12), piazza Duomo (17), teatro Verdi (22), Stazione FS (24)
+
+Linea Gialla, frequenza 10 minuti, 06:00-23:20
+Autostazione (0), via dei Frati (2), via delle Querce (5), largo Augusto (8), corso Roma (10), piazza S.Silvestro (14), Università (18), largo Nuvolari (20)
