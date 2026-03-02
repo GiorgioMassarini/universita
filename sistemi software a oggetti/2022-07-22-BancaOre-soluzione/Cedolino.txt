@@ -1,0 +1,48 @@
+Dipendente:	Mario Rossi
+Mese di:	GENNAIO 2022
+Ore previste: 	 	6H/9H/6H/9H/6H/0H/0H
+Saldo precedente:	12H07M
+
+03 Lunedì	08:30	14:30
+04 Martedì	08:30	17:30
+05 Mercoledì	08:30	14:30	Riposo Compensativo
+07 Venerdì	08:30	14:30	Riposo Compensativo
+10 Lunedì	07:30	13:42	
+10 Lunedì	13:42	13:53	Pausa Pranzo
+10 Lunedì	13:53	15:45	
+11 Martedì	07:30	13:28	
+11 Martedì	13:28	13:38	Pausa Pranzo
+11 Martedì	13:38	14:46	
+11 Martedì	14:46	16:40	Riposo Compensativo a Ore
+12 Mercoledì	07:30	13:49	
+12 Mercoledì	13:49	13:59	Pausa Pranzo
+12 Mercoledì	13:59	14:49	
+13 Giovedì	07:30	13:39	
+13 Giovedì	13:39	13:49	Pausa Pranzo
+13 Giovedì	13:49	16:44	
+14 Venerdì	07:30	13:35	
+17 Lunedì	07:30	14:00	
+17 Lunedì	14:00	14:10	Pausa Pranzo
+17 Lunedì	14:10	15:04	
+18 Martedì	07:31	13:42	
+18 Martedì	13:42	13:53	Pausa Pranzo
+18 Martedì	13:53	15:03	
+18 Martedì	15:03	16:42	Riposo Compensativo a Ore
+19 Mercoledì	07:30	13:44	
+19 Mercoledì	13:44	13:54	Pausa Pranzo
+19 Mercoledì	13:54	15:01	
+20 Giovedì	07:30	13:55	
+20 Giovedì	13:55	14:05	Pausa Pranzo
+20 Giovedì	14:05	14:51	
+20 Giovedì	14:51	16:40	Riposo Compensativo a Ore
+21 Venerdì	07:30	13:36	
+24 Lunedì	07:30	13:27	
+24 Lunedì	13:27	13:30	Riposo Compensativo a Ore
+25 Martedì	07:30	16:30
+26 Mercoledì	07:30	13:23	
+26 Mercoledì	13:23	13:30	Riposo Compensativo a Ore
+27 Giovedì	07:30	16:30
+28 Venerdì	07:30	13:13	
+28 Venerdì	13:13	13:30	Riposo Compensativo a Ore
+31 Lunedì	07:30	13:30
+

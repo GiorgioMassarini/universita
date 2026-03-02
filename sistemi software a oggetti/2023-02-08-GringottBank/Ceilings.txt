@@ -1,0 +1,6 @@
+Harry		20 galeoni
+Hermione	19 galeoni, 20 zellini
+Enrico		200 galeoni
+Ambra		100 galeoni, 20 zellini
+Roberta		100 galeoni, 28 zellini
+Ron			12 galeoni, 10 falci, 6 zellini
