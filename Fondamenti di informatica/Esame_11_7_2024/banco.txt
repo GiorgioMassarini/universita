@@ -1,0 +1,6 @@
+Stracchino dolce 3.5 1.0
+Blu_di_matilde erborinato 18.99 6.5
+Gorgonzola erborinato 17.50 12.0
+TheStilton erborinato 23.99 8.0
+Parmigiano pasta_dura 22.00 60.0
+GranaPadano pasta_dura 21.00 55.0

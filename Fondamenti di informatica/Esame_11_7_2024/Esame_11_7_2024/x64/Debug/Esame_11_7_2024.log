@@ -1,0 +1,4 @@
+﻿  negozio.c
+C:\Users\Megaport\Desktop\Esame_11_7_2024\negozio.c(68,3): warning C4098: 'stampaFormaggi': la funzione 'void' restituisce un valore
+C:\Users\Megaport\Desktop\Esame_11_7_2024\negozio.c(174,8): warning C4091: ' ': ignorato a sinistra di 'void' quando non si dichiara alcuna variabile
+  Esame_11_7_2024.vcxproj -> C:\Users\Megaport\Desktop\Esame_11_7_2024\x64\Debug\Esame_11_7_2024.exe
