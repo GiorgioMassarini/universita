@@ -1,0 +1,3 @@
+﻿  Source.c
+C:\Users\s0001164426\Desktop\es6cicli\es6cicli\Source.c(15,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  es6cicli.vcxproj -> C:\Users\s0001164426\Desktop\es6cicli\x64\Debug\es6cicli.exe
