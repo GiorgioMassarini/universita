@@ -1,0 +1,4 @@
+﻿  Source.c
+C:\Users\s0001164426\Desktop\es2File\es2File\Source.c(40,9): warning C4129: '%': unrecognized character escape sequence
+C:\Users\s0001164426\Desktop\es2File\es2File\Source.c(40,9): warning C4778: 'printf' : unterminated format string '%\n'
+  es2File.vcxproj -> C:\Users\s0001164426\Desktop\es2File\x64\Debug\es2File.exe
