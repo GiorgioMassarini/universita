@@ -1,0 +1,145 @@
+--Q1) Il numero dei dipartimenti con almeno 7 dipendenti
+SELECT count(*) AS num_dep
+FROM  (
+	SELECT count(*) AS num_empl
+	FROM EMPLOYEE e, DEPARTMENT d 
+	WHERE e.WORKDEPT = d.DEPTNO 
+	GROUP BY d.DEPTNO 
+	HAVING count(*)>=7
+)
+
+--oppure:
+
+SELECT count(*)
+FROM DEPARTMENT d 
+where(
+	SELECT count(*)
+	FROM EMPLOYEE e
+	WHERE e.workdept = d.DEPTNO)>=7
+
+
+
+--Q2) I dati dei dipendenti che lavorano in un dipartimento con almeno 7 dipendenti 
+SELECT *
+FROM EMPLOYEE e 
+WHERE e.WORKDEPT IN (
+	SELECT e.WORKDEPT
+	FROM EMPLOYEE e
+	GROUP BY e.WORKDEPT
+	HAVING count(*)>=7)
+
+	
+
+--Q3) I dati del dipartimento con il maggior numero di dipendenti
+
+SELECT	D.*
+FROM	DEPARTMENT D
+WHERE	D.DEPTNO IN
+	     ( 	SELECT	E.WORKDEPT
+		FROM 	EMPLOYEE E
+		GROUP BY E.WORKDEPT
+		HAVING 	 COUNT(*) >= ALL 
+			    (	SELECT COUNT(*)
+				FROM EMPLOYEE E1
+				GROUP BY E1.WORKDEPT  ) )
+
+--Q4) Il nome delle regioni e il totale delle vendite per ogni regione con un totale di vendite
+--maggiore di 30, ordinando per totale vendite decrescente 
+SELECT region, sum(sales) AS vendite
+FROM SALES s 
+GROUP BY REGION 
+HAVING sum(sales)>30
+ORDER BY vendite DESC 
+	
+	
+
+--Q5) Lo stipendio medio dei dipendenti che non sono manager di nessun dipartimento 
+SELECT avg(e.SALARY) AS AVGsalario_NOmanager
+FROM EMPLOYEE e 
+WHERE e.JOB <> 'MANAGER'
+AND e.job <> 'PRES'
+	
+
+--Q6)  I dipartimenti che non hanno dipendenti il cui cognome inizia per ‘L’ 
+SELECT d.* 
+FROM DEPARTMENT d 
+WHERE d.DEPTNO NOT IN ( 
+	SELECT e.workdept
+	FROM EMPLOYEE e
+	WHERE e.lastname LIKE 'L%' )
+	
+	
+	
+--Q7) I dipartimenti e il rispettivo massimo stipendio, per tutti i dipartimenti aventi un salario
+--medio minore del salario medio calcolato considerando i dipendenti di tutti gli altri
+--dipartimenti 
+SELECT e.WORKDEPT, max(e.SALARY) AS MAX_SAL
+FROM EMPLOYEE e
+GROUP BY e.WORKDEPT 
+HAVING avg(salary) < (
+	SELECT avg(e.salary)
+	FROM EMPLOYEE e )
+	
+
+--Q8) Per ogni dipartimento determinare lo stipendio medio per ogni lavoro per il quale il
+--livello di educazione medio è maggiore di quello dei dipendenti dello stesso
+--dipartimento che fanno un lavoro differente
+SELECT e.WORKDEPT, e.JOB, avg(e.SALARY) AS stipendio_medio
+FROM EMPLOYEE e 
+GROUP BY e.WORKDEPT, e.JOB 
+HAVING avg(e.EDLEVEL*1.0) > (
+	SELECT avg(e2.EDLEVEL*1.0)
+	FROM EMPLOYEE e2
+	WHERE e.job <> e2.job
+	AND e.WORKDEPT = e2.WORKdept)
+
+
+--Q9) Lo stipendio medio dei dipendenti che non sono addetti alle vendite
+SELECT avg(e.SALARY )
+FROM employee e
+WHERE e.LASTNAME NOT IN (
+	SELECT s.SALES_PERSON 
+	FROM sales s
+	)
+
+
+--Q10) Per ogni regione, i dati del dipendente che ha il maggior numero di vendite
+--(SUM(SALES)) in quella regione
+SELECT 	DISTINCT S.REGION, E.*
+FROM	EMPLOYEE E, SALES S
+WHERE	E.LASTNAME = S.SALES_PERSON
+AND	(S.SALES_PERSON, S.REGION) IN
+	     (	SELECT 	S1.SALES_PERSON, S1.REGION
+		FROM	SALES S1
+		GROUP BY S1.SALES_PERSON, S1.REGION
+		HAVING	 SUM(S1.SALES) >= ALL
+		     (	SELECT 	SUM(S2.SALES)
+			FROM	SALES S2
+			WHERE	S2.REGION = S1.REGION
+			GROUP BY S2.SALES_PERSON	 ) )
+	
+			
+			
+-- Q11) I codici dei dipendenti che svolgono un'attività per la quale ogni tupla di EMPPROJACT 
+--riguarda un periodo minore di 200 giorni
+SELECT 	DISTINCT E.EMPNO
+FROM	EMPPROJACT E
+WHERE	NOT EXISTS
+	(	SELECT	*
+		FROM	EMPPROJACT E1
+		WHERE	E1.ACTNO = E.ACTNO
+		AND	DAYS(E1.EMENDATE) - DAYS(E1.EMSTDATE) >= 200	)
+	
+	
+		
+-- Q12) Le attività, e il codice del relativo dipartimento, 
+--svolte da dipendenti di un solo dipartimento
+SELECT 	DISTINCT EPA.ACTNO, E.WORKDEPT AS DEPT 
+FROM 	EMPPROJACT EPA, EMPLOYEE E
+WHERE 	E.EMPNO = EPA.EMPNO
+AND NOT EXISTS ( SELECT *
+				 FROM 	EMPPROJACT EPA1, EMPLOYEE E1
+				 WHERE  E1.EMPNO = EPA1.EMPNO
+				 AND 	EPA1.ACTNO = EPA.ACTNO
+				 AND	E1.WORKDEPT <> E.WORKDEPT )
+	

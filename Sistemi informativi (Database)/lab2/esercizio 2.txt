@@ -1,0 +1,150 @@
+CREATE TABLE MODELLI (
+Modello varchar(20) NOT NULL PRIMARY KEY,
+Marca varchar(20) NOT NULL,
+Cilindrata integer NOT NULL,
+Alimentazione varchar(20) NOT NULL,
+VelMax Integer NOT NULL,
+PrezzoListino DEC(8,2) NOT NULL);
+
+create TABLE RIVENDITORI(
+CodR char(5) NOT NULL PRIMARY KEY,
+Citta varchar(20) NOT NULL);
+
+CREATE TABLE AUTO(
+Targa char(7) NOT NULL PRIMARY KEY,
+Modello varchar(20) NOT NULL REFERENCES MODELLI(modello),
+CodR char(5) NOT NULL REFERENCES RIVENDITORI(CodR),
+PrezzoVendita DEC(8,2) NOT NULL,
+km integer NOT NULL,
+anno integer NOT NULL,
+Venduta char(2));
+
+INSERT INTO RIVENDITORI VALUES 
+('RIV01', 'Venezia'),
+('RIV02','Bologna'),
+('RIV03','Bologna'),
+('RIV04','Rimini')
+;
+
+INSERT INTO MODELLI
+VALUES 
+('Agila', 'Opel', 998, 'Benzina', 180, 12000.00),
+('Aventador', 'Lamborghini', 6498, 'Benzina', 350, 432729.00),
+('Ghibli', 'Maserati', 3799, 'Benzina', 326, 150000.00),
+('Stratos', 'Lancia', 2419, 'Benzina', 230, 130000.00);
+
+INSERT INTO AUTO VALUES 
+('AG123AG', 'Agila', 'RIV03', 10500.00, 50000, 2018, NULL),
+('AG234AG', 'Agila', 'RIV03', 9000.00, 70000, 2018, NULL),
+('AV455AV', 'Aventador', 'RIV02', 50000.00, 90000, 2019, null),
+('AV456AV', 'Aventador', 'RIV02',430000.00, 0, 2021, NULL),
+('AV567AV', 'Aventador', 'RIV02', 400000.00, 0, 2022, 'SI'),
+('GH788GH', 'Ghibli', 'RIV02', 21000.00, 65000, 2021, null),
+('GH789GH', 'Ghibli', 'RIV01', 90000.00, 0, 2020, 'SI'),
+('GH890GH', 'Ghibli', 'RIV02', 100000.00, 30000, 2023, NULL),
+('GH901GH', 'Ghibli','RIV03', 70000.00, 50000, 2020, 'SI'),
+('ST123ST', 'Stratos', 'RIV04', 80000.00, 15000, 2010, 'SI'),
+('ST234ST', 'Stratos','RIV04', 95000.00, 70000, 2022, 'SI');
+
+--PRIMA QUERY
+--Le Maserati ancora in vendita a Bologna a un prezzo inferiore al 70% del listino
+SELECT DISTINCT A.*
+FROM AUTO A
+INNER JOIN modelli M
+	ON a.MODELLO = m.MODELLO 
+INNER JOIN rivenditori R
+	ON a.CODR = R.CODR 
+WHERE m.MARCA = 'Maserati'
+AND A.PREZZOVENDITA < (m.PREZZOLISTINO*0.70)
+AND r.CITTA ='Bologna'
+AND a.VENDUTA IS NULL;
+--
+
+--SECONDA QUERY
+--Il prezzo medio di un auto a benzina con cilindrata (cc) < 1000, almeno 5 anni di vita e meno di 80000 Km
+SELECT DISTINCT avg(prezzovendita) AS prezzomedio
+FROM AUTO A
+JOIN modelli m ON a.MODELLO = m.MODELLO 
+WHERE m.ALIMENTAZIONE = 'Benzina'
+AND m.CILINDRATA <1000
+AND (YEAR(CURRENT date)-a.anno)>=5
+AND a.KM <80000
+
+--TERZA QUERY
+--Per ogni modello con velocità massima > 180 Km/h, il prezzo più basso a Bologna
+SELECT DISTINCT A.MODELLO, min(a.PREZZOVENDITA) AS Prezzo_Minimo
+FROM AUTO A 
+JOIN modelli M ON a.MODELLO = m.MODELLO 
+JOIN rivenditori R ON a.CODR = r.CODR 
+WHERE r.CITTA = 'Bologna'
+AND m.VELMAX > 180
+GROUP BY a.MODELLO
+
+--QUARTA QUERY
+--Il numero di auto complessivamente trattate e vendute in ogni città
+SELECT r.CITTA, count(a.CODR) AS auto_trattate
+FROM AUTO A 
+JOIN modelli M ON a.MODELLO = m.MODELLO 
+JOIN rivenditori R ON a.CODR = r.CODR 
+WHERE a.VENDUTA = 'SI'
+GROUP BY r.CITTA 
+
+--QUINTA QUERY
+--I rivenditori che hanno ancora in vendita almeno il 20% delle auto complessivamente trattate,
+--ordinando il risultato per città e quindi per codice rivenditore
+SELECT r.CODR 
+FROM AUTO A 
+JOIN modelli M ON a.MODELLO = m.MODELLO 
+JOIN rivenditori R ON a.CODR = r.CODR 
+GROUP BY r.CODR 
+HAVING count(a.VENDUTA)<count(a.CODR)*0.80
+
+--SESTA QUERY 
+--I rivenditori che hanno disponibili auto di modelli mai venduti prima da loro
+SELECT	DISTINCT A.CODR
+FROM 	AUTO A
+GROUP BY A.CODR, A.MODELLO
+HAVING	 COUNT(A.VENDUTA) = 0
+
+--SETTIMA QUERY
+--Per ogni rivenditore, il numero di auto vendute, solo se 
+--il prezzo medio di tali auto risulta minore di 90000 Euro
+SELECT A.CODR, count(a.VENDUTA ) AS auto_vendute_minore9000
+FROM AUTO A
+WHERE a.VENDUTA = 'SI'
+GROUP BY A.CODR 
+HAVING avg(a.PREZZOVENDITA )<90000
+
+--OTTAVA QUERY
+--Per ogni auto A, il numero di auto vendute a un prezzo minore 
+--di quello di A 
+SELECT 	A1.TARGA, COUNT(A2.TARGA) AS NUM_PREZZOMINORE
+FROM 	AUTO A1 LEFT JOIN AUTO A2 ON (A1.PREZZOVENDITA > A2.PREZZOVENDITA) 
+								 AND (A2.VENDUTA = 'SI')
+GROUP BY A1.TARGA
+ORDER BY NUM_PREZZOMINORE DESC;
+
+--NONA QUERY
+--Per ogni anno e ogni modello, il rapporto medio 
+--tra prezzo di vendita e prezzo di listino,
+--considerando un minimo di 2 auto vendute
+SELECT 	M.MODELLO, A.ANNO, AVG(A.PREZZOVENDITA/M.PREZZOLISTINO) AS AVG_RAPPORTO
+FROM 	MODELLI M, AUTO A
+WHERE  	M.MODELLO = A.MODELLO
+GROUP BY M.MODELLO, A.ANNO 		
+HAVING	 COUNT(A.VENDUTA) >= 2
+
+--DECIMA QUERY
+--Per ogni modello, i rivenditori che non ne hanno mai trattata 
+--      una di quel modello 
+SELECT  M.MODELLO, R.CODR 
+FROM 	MODELLI M CROSS JOIN RIVENDITORI R
+ EXCEPT
+SELECT  A.MODELLO, A.CODR
+FROM AUTO A;
+--
+-- soluzione alternativa basata su outer join
+SELECT  M.MODELLO, R.CODR
+FROM 	(MODELLI M CROSS JOIN RIVENDITORI R)
+  LEFT JOIN AUTO A ON ((M.MODELLO,R.CODR)=(A.MODELLO, A.CODR))
+WHERE	A.TARGA IS NULL	;
